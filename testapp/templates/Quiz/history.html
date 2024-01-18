@@ -1,0 +1,46 @@
+{% extends 'Quiz/dependencies.html' %}
+
+{% block content %}
+<div class="card-body">
+    <h4>Highest Lowest</h4>
+    <table class="table"><!-- Average Lowest Highest Table -->
+        <thead>
+            <tr>
+                <td>Highest</td>
+                <td>Average</td>
+                <td>Lowest</td>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>{{ highest }}%</td>
+                <td>{{ average }}%</td>
+                <td>{{ lowest }}%</td>
+            </tr>
+        </tbody>
+    </table><br><br>
+    <h4>List</h4>
+    <table class="table">
+        <thead>
+            <tr>
+                <td>User ID</td>
+                <td>User Name</td>
+                <td>
+                    Score In Percent
+                </td>
+            </tr>
+        </thead>
+        <tbody>
+            {% for l in allList %}
+            <tr>
+                <td>{{ l.user_id }}</td>
+                <td>{{ l.user_name }}</td>
+                <td>
+                    {{ l.percent }}%
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+{% endblock %}
